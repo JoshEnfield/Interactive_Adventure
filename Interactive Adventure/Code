@@ -1,52 +1,50 @@
-def Main():
+def Main(): #Sets the character customization as a reuseable function
     
-    print("Hello, welcome to your interactive story. Before we begin, I must learn a few things about your character.") #Intro.
+    print("Hello, welcome to your interactive story. Before we begin, I must learn a few things about your character.")
     print("")
-    FName = str(input("What is your character's forename?")).capitalize()#Asks what they would like to name their character.
-    SName = str(input("What is your character's surname?")).capitalize()
+    FName = str(input("What is your character's forename?")).capitalize() #Asks what they would like to have their character's forename be.
+    SName = str(input("What is your character's surname?")).capitalize() #Asks what they would like to have their character's surname be.
     print("")
-    Sex = str(input("What is the sex of your character?")).capitalize()
+    Sex = str(input("What is the sex of your character?")).capitalize() #Asks what sex they would like their character to be.
     print("")
     Age = int(input("How old is " + FName + "?")) #Asks how old they want their character to be.
 
     print("")
     print("Races include: Human, Elf, Orc & Dwarf") #Shows a list of Races for the user to pick from.
-    Race = str(input("What race would you like " + FName + " to be?")).capitalize() #Asks what race the user wants to be from the list and makes the input lowercase.
-    Races = ["Human", "Elf", "Orc", "Dwarf"]
-    while True: #Starts a while loop that makes the previous question repeat until one of the answers from the list is inputted.
-        if Race in Races:
-            break
+    Race = str(input("What race would you like " + FName + " to be?")).capitalize() #Asks what race the user wants to be from the list and makes the input capitalized.
+    Races = ["Human", "Elf", "Orc", "Dwarf"] #Sets the options as the Races.
+    while True: #Starts a loop that only ends if the statement below is True.
+        if Race in Races: #Checks if the given input is listed within the Races list.
+            break #Stops the loop
         print("")
         print("Race not found...") #Informs the user that the race they chose isn't accepted.
         print("Races include: Human, Elf, Orc & Dwarf") #Shows a list of Races for the user to pick from.
-        Race = str(input("What race would you like " + FName + " to be?")).capitalize() #Asks what race the user wants to be from the list and makes the input lowercase.
+        Race = str(input("What race would you like " + FName + " to be?")).capitalize() #Asks what race the user wants to be from the list and makes the input capitalized.
     print("")
     print("Classes include: Rogue, Knight, Archer & Mage.") #Shows a list of Classes for the user to pick from.
-    Class = str(input("What class do you want "+ FName + " to be?")).capitalize() #Asks the user what Class they want to be form the list and makes the input lowercase.
-    Classes = ["Rogue", "Knight", "Archer", "Mage"]
-    while True: #Starts a while loop that makes the previous question repeat until one of the answers from the list is inputted.
-        if Class in Classes:
-            break
+    Class = str(input("What class do you want "+ FName + " to be?")).capitalize() #Asks the user what Class they want to be form the list and makes the input capitalized.
+    Classes = ["Rogue", "Knight", "Archer", "Mage" ]#Sets the options as the Classes.
+    while True: #Starts a loop that only ends if the statement below is True.
+        if Classin Classes: #Checks if the given input is listed within the Classes list.
+            break #Stops the loop
         print("")
         print("Class not found...") #Informs the user that their Class has not been accepted.
         print("Classes include: Rogue, Knight, Archer & Mage.") #Shows a list of Classes for the user to pick from.
-        Class = str(input("What class do you want "+ FName + " to be?")).capitalize() #Asks the user what Class they want to be form the list and makes the input lowercase.
-    C = Class.capitalize()
-    R = Race.capitalize()
+        Class = str(input("What class do you want "+ FName + " to be?")).capitalize() #Asks the user what Class they want to be form the list and makes the input capitalized.
     print("")
-    print("So, your name is '" + FName + " " + SName + "' and you are " + str(Age) + " Year(s) old. You are playing as a " + Sex + " " + C + " " + R + "?")
-    CorNC = str(input("Is this correct? [Y/N]")).capitalize()
-    CorNCs = ["Y", "N"]
-    while True:
-        if CorNC in CorNCs:
-            break
-        print("Please input either of the options. [Y/N]")
-        CorNC = str(input("Is this correct? [Y/N]")).capitalize()    
-    if CorNC == "N":
+    print("So, your name is '" + FName + " " + SName + "' and you are " + str(Age) + " Year(s) old. You are playing as a " + Sex + " " + C + " " + R + "?") #Prints the information that has been chosen by the user.
+    CorNC = str(input("Is this correct? [Y/N]")).capitalize() #Asks if the information is something that the user is happy with.
+    CorNCs = ["Y", "N"] #Sets the two options as a acceptable responce.
+    while True: #Starts a loop that only ends if the statement below is True.
+        if CorNC in CorNCs: #Checks if the given input is listed within the CorNCs list.
+            break #Stops the loop
+        print("Please input either of the options. [Y/N]") #Asks they to put one of the two options.
+        CorNC = str(input("Is this correct? [Y/N]")).capitalize() #Asks if the information is something that the user is happy with.
+    if CorNC == "N": #If the user puts "N" then it replays the 'Main' function.
         print("")
-        Main()
-    elif CorNC == "Y":
+        Main() #Replays the code within the "Main" block
+    elif CorNC == "Y": #If the user puts "Y" then it allows them to continue the program.
         print("Good. Enjoy your adventure :D")
-Main()
+Main() #Says that code beyond this point is not apart of the 'Main' function.
 print("")
 print("Test")
