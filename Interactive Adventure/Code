@@ -5,34 +5,75 @@ def Main(): #Sets the character customization as a reuseable function
     FName = str(input("What is your character's forename?")).capitalize() #Asks what they would like to have their character's forename be.
     SName = str(input("What is your character's surname?")).capitalize() #Asks what they would like to have their character's surname be.
     print("")
-    Sex = str(input("What is the sex of your character?")).capitalize() #Asks what sex they would like their character to be.
-    print("")
+    
     Age = int(input("How old is " + FName + "?")) #Asks how old they want their character to be.
-
     print("")
-    print("Races include: Human, Elf, Orc & Dwarf") #Shows a list of Races for the user to pick from.
+    
+    Sex = str(input("What is the sex of your character? [Male, Female or Non-Binary]")).capitalize() #Asks what sex they would like their character to be.
+    Sexes = ["Male", "Female", "Non-binary"]
+    while True:
+        if Sex in Sexes:
+            break
+        Sex = str(input("What is the sex of your character? [Male, Female or Non-Binary]")).capitalize() #Asks what sex they would like their character to be.
+        Sexes = ["Male", "Female", "Non-binary"] 
+        print("")
+        
+    print("")
+    print("Races include: Human, Elf, Orc, Dwarf, Gnome, Tiefling & Githzerai") #Shows a list of Races for the user to pick from.
+    print("Humans gain +1 to every stat")
+    print("Elves gain +2 Dexterity")
+    print("Orcs gain +2 Strength")
+    print("Dwarves gain +2 Constitution")
+    print("Gnomes gain +2 Intelligence")
+    print("Tieflings gain +2 Charisma")
+    print("Githzerais gain +2 Wisdom")
+    print("")
     Race = str(input("What race would you like " + FName + " to be?")).capitalize() #Asks what race the user wants to be from the list and makes the input capitalized.
-    Races = ["Human", "Elf", "Orc", "Dwarf"] #Sets the options as the Races.
+    Races = ["Human", "Elf", "Orc", "Dwarf", "Gnome", "Tiefling", "Githzerai"] #Sets the options as the Races.
     while True: #Starts a loop that only ends if the statement below is True.
         if Race in Races: #Checks if the given input is listed within the Races list.
             break #Stops the loop
         print("")
         print("Race not found...") #Informs the user that the race they chose isn't accepted.
-        print("Races include: Human, Elf, Orc & Dwarf") #Shows a list of Races for the user to pick from.
+        print("Races include: Human, Elf, Orc, Dwarf, Gnome, Tiefling & Githzerai") #Shows a list of Races for the user to pick from.
+        print("Humans gain +1 to every stat")
+        print("Elves gain +2 Dexterity")
+        print("Orcs gain +2 Strength")
+        print("Dwarves gain +2 Constitution")
+        print("Gnomes gain +2 Intelligence")
+        print("Tieflings gain +2 Charisma")
+        print("Githzerais gain +2 Wisdom")
+        print("")
         Race = str(input("What race would you like " + FName + " to be?")).capitalize() #Asks what race the user wants to be from the list and makes the input capitalized.
+        
     print("")
-    print("Classes include: Rogue, Knight, Archer & Mage.") #Shows a list of Classes for the user to pick from.
+    print("Classes include: Rogue, Paladin, Bard, Druid, Wizard.") #Shows a list of Classes for the user to pick from.
+    print("Rogues gain +1 Dexterity & +1 Intelligence")
+    print("Paladins gain +1 Strength & +1 Constitution")
+    print("Bards gain +2 Charisma")
+    print("Druid gain +1 Wisdom & + 1 Intelligence")
+    print("Wizard gain +2 Intelligence")
+    print("Ranger gain +1 Strength & +1 Dexterity")
+    print("")
     Class = str(input("What class do you want "+ FName + " to be?")).capitalize() #Asks the user what Class they want to be form the list and makes the input capitalized.
-    Classes = ["Rogue", "Knight", "Archer", "Mage" ]#Sets the options as the Classes.
+    Classes = ["Rogue", "Paladin", "Ranger", "Druid", "Wizard", "Bard"]#Sets the options as the Classes.
     while True: #Starts a loop that only ends if the statement below is True.
         if Class in Classes: #Checks if the given input is listed within the Classes list.
             break #Stops the loop
         print("")
         print("Class not found...") #Informs the user that their Class has not been accepted.
-        print("Classes include: Rogue, Knight, Archer & Mage.") #Shows a list of Classes for the user to pick from.
+        print("Classes include: Rogue, Paladin, Bard, Druid, Wizard.") #Shows a list of Classes for the user to pick from.
+        print("Rogues gain +1 Dexterity & +1 Intelligence")
+        print("Paladins gain +1 Strength & +1 Constitution")
+        print("Bards gain +2 Charisma")
+        print("Druid gain +1 Wisdom & + 1 Intelligence")
+        print("Wizard gain +2 Intelligence")
+        print("Ranger gain +1 Strength & +1 Dexterity")
+        print("")
         Class = str(input("What class do you want "+ FName + " to be?")).capitalize() #Asks the user what Class they want to be form the list and makes the input capitalized.
+
     print("")
-    print("So, your name is '" + FName + " " + SName + "' and you are " + str(Age) + " Year(s) old. You are playing as a " + Sex + " " + C + " " + R + "?") #Prints the information that has been chosen by the user.
+    print("So, your name is '" + FName + " " + SName + "' and you are " + str(Age) + " Year(s) old. You are playing as a " + Sex + " " + Class + " " + Race + "?") #Prints the information that has been chosen by the user.
     CorNC = str(input("Is this correct? [Y/N]")).capitalize() #Asks if the information is something that the user is happy with.
     CorNCs = ["Y", "N"] #Sets the two options as a acceptable responce.
     while True: #Starts a loop that only ends if the statement below is True.
@@ -44,7 +85,71 @@ def Main(): #Sets the character customization as a reuseable function
         print("")
         Main() #Replays the code within the "Main" block
     elif CorNC == "Y": #If the user puts "Y" then it allows them to continue the program.
+        print("")
         print("Good. Enjoy your adventure :D")
-Main() #Says that code beyond this point is not apart of the 'Main' function.
-print("")
-print("Test")
+
+    print("")
+    S = 1
+    D = 1
+    C = 1
+    I = 1
+    Ch = 1
+    W = 1
+
+    print("Your stats are:")
+    if Race == "Human":
+        S  += 1
+        D  += 1
+        C  += 1
+        I  += 1
+        Ch += 1
+        W  += 1
+    
+    elif Race == "Elf":
+        D  += 2
+
+    elif Race == "Orc":
+        S += 2
+
+    elif Race == "Dwarf":
+        C += 2
+
+    elif Race == "Gnome":
+        I += 2
+
+    elif Race == "Tiefling":
+        Ch += 2
+
+    elif Race == "Githzerais":
+        W += 2
+
+    if Class == "Rogue":
+        D += 1
+        I += 1
+
+    elif Class == "Paladin":
+        S += 1
+        C += 1
+
+    elif Class == "Ranger":
+        C += 1
+        D += 1
+
+    elif Class == "Wizard":
+        I += 2
+
+    elif Class == "Bard":
+        Ch += 2
+
+    elif Class == "Druid":
+        W += 1
+        I += 1
+
+    print("Your starting stats are:")
+    print("Strength " + str(S))
+    print("Dexterity " + str(D))
+    print("Constitution " + str(C))
+    print("Intelligence " + str(I))
+    print("Charisma " + str(Ch))
+    print("Wisdom " + str(W))
+Main()
