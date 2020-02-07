@@ -25,7 +25,7 @@ def Main(): #Sets the character customization as a reuseable function
     Class = str(input("What class do you want "+ FName + " to be?")).capitalize() #Asks the user what Class they want to be form the list and makes the input capitalized.
     Classes = ["Rogue", "Knight", "Archer", "Mage" ]#Sets the options as the Classes.
     while True: #Starts a loop that only ends if the statement below is True.
-        if Classin Classes: #Checks if the given input is listed within the Classes list.
+        if Class in Classes: #Checks if the given input is listed within the Classes list.
             break #Stops the loop
         print("")
         print("Class not found...") #Informs the user that their Class has not been accepted.
