@@ -96,7 +96,6 @@ def Main(): #Sets the character customization as a reuseable function
     Ch = 1
     W = 1
 
-    print("Your stats are:")
     if Race == "Human":
         S  += 1
         D  += 1
